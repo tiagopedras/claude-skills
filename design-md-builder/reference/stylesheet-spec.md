@@ -76,9 +76,27 @@ a source component or a usage count supports it.
   `calculator-inputs`, `calculator-output`, `result`, `result-label`,
   `result-value`, `result-detail`.
 
-For a product page kind, add the components the usage scan ranks highest that
-are missing above (tabs, navigation, a data list). For a marketing kind, add a
-`hero` group only if the brand's own site uses one.
+For an app-screen kind, add an app layout (`app`, `sidebar`, `main`,
+`toolbar`) and the components the usage scan ranks highest that are missing
+above (tabs, navigation, a data list).
+
+For a marketing kind, add:
+
+- **Hero:** `hero`, `hero-lede`, `hero-actions`. Actions centre vertically, so
+  a caption beside a button lines up with it.
+- **Sections:** `section`, `section-head`, `band`.
+- **Feature list:** `feature-list`, `feature`, `feature-title`,
+  `feature-body`. A short list of what the product does, as rows divided by
+  hairlines. Without it, agents either build a three-card grid or style their
+  own list and get the spacing wrong.
+- **Inline form:** `inline-form`, `inline-form-row`. One input with its button
+  beside it, the button lined up with the input rather than with the note
+  below. Stacks on a phone with the button at full height. Without it, every
+  landing page invents its own sign-up row.
+
+The smoke test cannot reveal a missing primitive, because it only uses
+classes that exist. Think through the page kinds chosen and ask which common
+pattern on them has no class yet.
 
 ## Craft rules the CSS must enforce
 
