@@ -183,6 +183,12 @@ its body indented two spaces. Every later entry copies the first, so a first
 entry written as a bare paragraph makes the whole file unreadable to any tool that parses it
 and nothing ever says so.
 
+`IMPROVEMENTS.md` is a private backlog and is never committed. Make sure the
+repo's `.gitignore` lists it: append the line `IMPROVEMENTS.md` if it is missing
+(creating `.gitignore` if the repo has none), and if `git ls-files IMPROVEMENTS.md`
+shows it is already tracked, tell the user rather than untracking it yourself.
+Check this whenever you write an entry, not only when you create the file.
+
 If the repo keeps a `CLAUDE.md` or an `AGENTS.md` at its root, add a sentence
 there pointing at the new file, in that file's own voice, so the next session
 reads it before diagnosing anything. That is the one exception to the one-file
@@ -191,8 +197,8 @@ rule, it applies only when the file is first created, and it is a pointer to
 
 ## What this does not do
 
-It never writes to anything other than `IMPROVEMENTS.md`, with two exceptions:
-the first-creation header above, and the reciprocal `With`/`Unblocks` line on a
+It never writes to anything other than `IMPROVEMENTS.md`, with three exceptions:
+the first-creation header above, the `IMPROVEMENTS.md` line in `.gitignore`, and the reciprocal `With`/`Unblocks` line on a
 second entry's Build block when this one links to it — never any other edit to
 that entry's prose. It never edits the code the idea is about, even
 a trivial one-line fix, even if the user asks in the same breath; that is a separate
